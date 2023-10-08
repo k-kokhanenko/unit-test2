@@ -1,3 +1,9 @@
-import status from './basic';
+import sortHeroesList from './basic';
 
-console.log(status({ name: 'Test', health: 90 }));
+const heroes = [
+  { name: 'мечник', health: 10 },
+  { name: 'маг', health: 100 },
+  { name: 'лучник', health: 80 },
+];
+
+console.log(sortHeroesList(heroes));

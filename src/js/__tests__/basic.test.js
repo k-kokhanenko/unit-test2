@@ -1,16 +1,17 @@
-import status from '../basic';
+import sortHeroesList from '../basic';
 
-test('getStatus check healthy', () => {
-  const result = status({ name: 'Test', health: 90 });
-  expect(result).toBe('healthy');
-});
+test('sortHeroesList check', () => {
+  const heroes = [
+    { name: 'мечник', health: 10 },
+    { name: 'маг', health: 100 },
+    { name: 'лучник', health: 80 },
+  ];
 
-test('getStatus check critical', () => {
-  const result = status({ name: 'Test', health: 10 });
-  expect(result).toBe('critical');
-});
+  const heroesResult = [
+    { name: 'маг', health: 100 },
+    { name: 'лучник', health: 80 },
+    { name: 'мечник', health: 10 },
+  ];
 
-test('getStatus check wounded', () => {
-  const result = status({ name: 'Test', health: 45 });
-  expect(result).toBe('wounded');
+  expect(sortHeroesList(heroes)).toEqual(heroesResult);
 });

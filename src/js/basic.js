@@ -1,10 +1,3 @@
-export default function getStatus(obj) {
-  if (obj.health > 50) {
-    return 'healthy';
-  }
-  if (obj.health < 15) {
-    return 'critical';
-  }
-
-  return 'wounded';
+export default function sortHeroesList(obj) {
+  return obj.sort((a, b) => parseInt(b.health, 2) - parseInt(a.health, 2));
 }
